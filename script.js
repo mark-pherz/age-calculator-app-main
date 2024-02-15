@@ -168,6 +168,12 @@ button.addEventListener("click", () => {
 
     const targetDate = new Date(year, month, day);
 
+    if (now < targetDate) {
+      invalidDateInput();
+      isValid = false;
+      return;
+    }
+
     const diffInDays = Math.floor((now - targetDate) / (1000 * 60 * 60 * 24));
 
     let years = nowYear - year;
@@ -195,13 +201,18 @@ button.addEventListener("click", () => {
       diffInDays: diffInDays,
     };
   }
+
   removeEverything();
   validateInputs();
 
   if (isValid) {
     const difference = calculateDifference(day.value, month.value, year.value);
-    document.getElementById("output-years").innerText = `${difference.years}`;
-    document.getElementById("output-months").innerText = `${difference.months}`;
-    document.getElementById("output-days").innerText = `${difference.days}`;
+    if (difference) {
+      document.getElementById("output-years").innerText = `${difference.years}`;
+      document.getElementById(
+        "output-months"
+      ).innerText = `${difference.months}`;
+      document.getElementById("output-days").innerText = `${difference.days}`;
+    }
   }
 });
