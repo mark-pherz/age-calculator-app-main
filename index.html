@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="input-section">
+        <div class="input-item">
+          <label class="label-text" id="day-label" for="day">day</label>
+          <input
+            class="input-field"
+            type="text"
+            name="day"
+            id="day"
+            oninput="validateInput(this, 2)" />
+        </div>
+        <div class="input-item">
+          <label class="label-text" id="month-label" for="month">month</label>
+          <input
+            class="input-field"
+            type="text"
+            name="month"
+            id="month"
+            oninput="validateInput(this, 2)" />
+        </div>
+        <div class="input-item">
+          <label class="label-text" for="year" id="year-label">year</label>
+          <input
+            class="input-field"
+            type="text"
+            name="year"
+            id="year"
+            oninput="validateInput(this, 4)" />
+        </div>
+      </div>
+      <div class="separator-section">
+        <div class="button">
+          <img src="./assets/images/icon-arrow.svg" alt="" />
+        </div>
+        <hr />
+      </div>
+      <div class="output-section">
+        <div class="output-item">
+          <div class="output-number" id="output-years">--</div>
+          years
+        </div>
+        <div class="output-item">
+          <div class="output-number" id="output-months">--</div>
+          months
+        </div>
+        <div class="output-item">
+          <div class="output-number" id="output-days">--</div>
+          days
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
